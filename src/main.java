@@ -2,7 +2,7 @@ import java.io.*;
 
 public class main {
     public static void main(String[] args) {
-        String filenameTxt = "randDoubles.txt";
+        String filenameTxt = "test.txt";
         String filenameBin = "randDoubles.bin";
 
         writeFiles(filenameTxt, filenameBin);
