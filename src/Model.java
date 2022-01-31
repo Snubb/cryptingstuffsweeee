@@ -1,16 +1,10 @@
 import java.util.ArrayList;
 
-public class Kryptering {
-    public static void main(String[] args) {
-        String message = "HAJ PÅ DAJ";
-        char key = '(';
-        String cryptedMessage = "";
+public class Model {
+    public Model(){
 
-        cryptedMessage = encryptMessage(message, key);
-        System.out.println(cryptedMessage);
-        System.out.println(encryptMessage(message, key));
-        System.out.println(encryptMessage(cryptedMessage, key));
     }
+
     public static String encryptMessage(String message, char key) {
         String encryptedMessage = "";
         ArrayList<Integer> messageArray = new ArrayList<>();
@@ -25,4 +19,3 @@ public class Kryptering {
         return encryptedMessage;
     }
 }
-
