@@ -18,24 +18,23 @@ public class Controller {
         view.getEncryptButton().addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                String key = JOptionPane.showInputDialog("Provide key");
-                view.setEncryptedText(model.encryptMessage(view.getTextArea().getText(), key.toCharArray()[0]));
+                long key = Long.parseLong(JOptionPane.showInputDialog("Provide key:"), 36);
+                view.setEncryptedText(model.encryptMessage(view.getTextArea().getText(), key));
             }
         });
 
         view.getSaveButton().addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                String filename = JOptionPane.showInputDialog("Filename: ") + ".txt";
-                model.writeFile(filename, view.getEncryptedTextArea().getText());
+                model.writeFile(view.getEncryptedTextArea().getText());
             }
         });
 
         view.getOpenButton().addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                String filename = JOptionPane.showInputDialog("Filename: ");
-                view.setText(model.printFile(filename));
+                //String filename = JOptionPane.showInputDialog("Filename: ");
+                view.setText(model.openFile());
             }
         });
     }
